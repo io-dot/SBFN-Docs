@@ -34,7 +34,6 @@ npm run dev
 ## 📚 Features
 
 - [Astro](https://astro.build) - Blazingly fast static site generation & type-safe frontmatter
-- [Tailwind CSS](https://tailwindcss.com) - Quick & efficient styling
 - [Pagefind](https://pagefind.app) - Powering static search
 - [RSS](https://en.wikipedia.org/wiki/RSS) - Syndication feed
 - [OpenGraph](https://ogp.me) - Social media previews (including procedurally generated images)
@@ -73,7 +72,6 @@ Inside your project, you'll see the following useful folders and files:
 │   └── site_config.ts
 ├── astro.config.mjs
 ├── package.json
-└── tailwind.config.js
 ```
 
 Content is stored in the `src/content` folder. This is where you'll find your blog posts (`blogs/`), documentation (`docs/`), and configuration (`config.ts`). The `config.ts` file is where the frontmatter type definitions are made.
