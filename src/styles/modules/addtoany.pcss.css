@@ -1,0 +1,64 @@
+.addtoany {
+  display: inline;
+}
+
+.addtoany_list {
+  & > a,
+  a img,
+  a > span {
+    vertical-align: middle;
+  }
+
+  & > a {
+    --link-color: var(--c-primary);
+    --link-hover-color: var(--c-white);
+    --addtoany-link-c: var(--c-primary-light);
+
+    background-color: var(--addtoany-link-c);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      --addtoany-link-c: var(--c-primary);
+    }
+  }
+
+  .a2a_counter img {
+    float: left;
+  }
+}
+
+.addtoany_list a span.a2a_img {
+  display: inline-block;
+  height: 16px;
+  opacity: 1;
+  overflow: hidden;
+  width: 16px;
+}
+.addtoany_list a span {
+  display: inline-block;
+  float: none;
+}
+.addtoany_list.a2a_kit_size_32 a > span {
+  border-radius: 4px;
+  height: 32px;
+  line-height: 32px;
+  opacity: 1;
+  width: 32px;
+}
+.addtoany_list a:hover:hover img,
+.addtoany_list a:hover span {
+  opacity: 0.7;
+}
+.addtoany_list a.addtoany_share_save img {
+  border: 0;
+  width: auto;
+  height: auto;
+}
+.addtoany_list a .a2a_count {
+  position: relative;
+}

@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import { SITE_URL } from './src/site_config';
@@ -7,13 +8,14 @@ import { SITE_URL } from './src/site_config';
 export default defineConfig({
   site: SITE_URL,
   base: '/SBFN-Docs',
-  integrations: [tailwind(), sitemap()],
+  integrations: [tailwind(), sitemap(), mdx()],
   vite: {
     plugins: [rawFonts(['.ttf'])],
-    optimizeDeps: { exclude: ['@resvg/resvg-js'] }
-  },
+    optimizeDeps: {
+      exclude: ['@resvg/resvg-js']
+    }
+  }
 });
-
 function rawFonts(ext) {
   return {
     name: 'vite-plugin-raw-fonts',

@@ -1,0 +1,68 @@
+.badge {
+  --badge-px: 20px;
+  --badge-py: 15px;
+  --badge-fs: 14px;
+  --badge-fw: var(--fw-normal);
+  --badge-c: #fff;
+  --badge-bg: var(--c-pirmary);
+  --badge-br: var(--br-pill);
+
+  display: inline-block;
+  padding: var(--badge-py) var(--badge-px);
+  font-size: var(--badge-fs);
+  font-weight: var(--badge-fw);
+  line-height: 1;
+  color: var(--badge-c);
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: var(--badge-br);
+  background-color: var(--badge-bg);
+  width: fit-content;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+
+.badge-sm {
+  --badge-px: 0;
+  --badge-py: 3px;
+
+  min-width: 20px;
+  text-align: center;
+}
+
+.badge-approved,
+.badge-new,
+.badge-published {
+  --badge-c: var(--c-primary);
+  --badge-bg: var(--c-green-light);
+}
+
+.badge-draft,
+.badge-awaiting-for-approval,
+.badge-awaiting-submission {
+  --badge-c: var(--body-c);
+  --badge-bg: var(--c-gray-100);
+}
+
+.badge-new-comments {
+  --badge-c: var(--c-white);
+  --badge-bg: var(--c-warning);
+}
+
+.badge-awaiting-approval,
+.badge-submitted-in-review {
+  --badge-c: var(--c-warning);
+  --badge-bg: var(--c-warning-light);
+}
+
+.badge-accepted {
+  --badge-c: var(--body-c);
+  --badge-bg: var(--c-gray-100);
+}

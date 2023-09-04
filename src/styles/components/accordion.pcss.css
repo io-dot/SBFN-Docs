@@ -1,0 +1,77 @@
+/* Base styles */
+.accordion {
+  --a-color: var(--body-c);
+  --a-bg: var(--body-bg);
+  --a-transition: all 0.15s ease;
+  --a-bc: var(--border-c);
+  --a-bw: var(--border-width);
+  --a-border-radius: var(--border-radius);
+  --a-inner-border-radius: calc(var(--a-border-radius) - var(--a-bw));
+  --a-btn-px: 0px;
+  --a-btn-py: 30px;
+  --a-btn-c: var(--c-dark);
+  --a-btn-bg: var(--a-bg);
+  --a-btn-icon: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.7'%3E%3Cmask id='mask0_1236_21878' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%2319241d'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_1236_21878)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.4554 10.4559H16.8264V9.05585H10.4554V2.68485L9.05544 2.68485L9.05544 9.05585L2.68437 9.05585V10.4559L9.05544 10.4559V16.8269L10.4554 16.8269L10.4554 10.4559Z' fill='%2319241D'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+  --a-btn-icon-width: 1.25rem;
+  --a-btn-icon-transform: rotate(-135deg);
+  --a-btn-icon-transition: transform 0.2s ease-in-out;
+  /* --a-active-color: var(--c-primary); */
+  /* --a-active-bg: var(--a-color); */
+}
+
+.accordion-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--a-btn-py) var(--a-btn-px);
+  font-size: 18px;
+  border: 0px;
+  font-weight: var(--fw-medium);
+  color: var(--a-btn-c);
+  text-align: left;
+  background-color: var(--a-btn-bg);
+  overflow-anchor: none;
+  transition: var(--a-transition);
+
+  &:not(.collapsed) {
+    &::after {
+      transform: var(--a-btn-icon-transform);
+    }
+  }
+
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    width: var(--a-btn-icon-width);
+    height: var(--a-btn-icon-width);
+    margin-left: auto;
+    background-image: var(--a-btn-icon);
+    background-repeat: no-repeat;
+    background-size: var(--a-btn-icon-width);
+    transition: var(--a-btn-icon-transition);
+  }
+
+  &:hover {
+    z-index: 2;
+  }
+
+  &:focus {
+    z-index: 3;
+    outline: 0;
+  }
+}
+
+.accordion-header {
+  margin-bottom: 0;
+}
+
+.accordion-item {
+  color: var(--a-color);
+  background-color: var(--a-bg);
+  border-bottom: var(--a-bw) solid var(--a-bc);
+}
+
+.accordion-body {
+  padding-bottom: var(--a-btn-py);
+}

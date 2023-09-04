@@ -1,0 +1,106 @@
+.alert {
+  --a-bg: transparent;
+  --a-fs: var(--body-fs);
+  --a-px: 20px;
+  --a-py: 14px;
+  --a-mb: 20px;
+  --a-c: inherit;
+  --a-bc: transparent;
+  --a-br: var(--border-radius-sm);
+  --a--btn-c-top: 10px;
+  --a--btn-c-right: 10px;
+  --a--btn-c-bg: var(--a-c);
+
+  --link-color: var(--a-c);
+
+  position: relative;
+  padding: var(--a-py) var(--a-px);
+  margin-bottom: var(--a-mb);
+  color: var(--a-c);
+  background-color: var(--a-bg);
+  border-radius: var(--a-br);
+  font-size: var(--a-fs);
+
+  .btn-close {
+    --btn-c--img: url("data:image/svg+xml,%3Csvg width='14' height='15' viewBox='0 0 14 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.4 14.5L0 13.1L5.6 7.5L0 1.9L1.4 0.5L7 6.1L12.6 0.5L14 1.9L8.4 7.5L14 13.1L12.6 14.5L7 8.9L1.4 14.5Z' fill='%23D91023'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    top: var(--a--btn-c-top);
+    right: var(--a--btn-c-right);
+    z-index: 2;
+    background-color: var(--a--btn-c-bg);
+  }
+
+  .alert-link,
+  a,
+  b,
+  strong {
+    color: var(--a-link-c);
+  }
+}
+
+.alert-heading {
+  color: inherit;
+}
+
+.alert-link {
+  font-weight: 700;
+}
+
+.alert-dismissible {
+  padding-right: 3rem;
+}
+
+.alert-warning {
+  --a-c: var(--c-body-c);
+  --a-bg: var(--c-warning-light);
+  --a-bc: var(--c-warning-light);
+  --a-link-c: var(--c-warning);
+}
+
+.alert-success {
+  --a-c: var(--c-body-c);
+  --a-bg: var(--c-green-light);
+  --a-bc: var(--c-green-light);
+  --a-link-c: var(--c-primary);
+}
+
+.alert-revert-success {
+  --a-c: var(--c-white);
+  --a-bg: var(--c-primary);
+  --a-px: 30px;
+}
+
+.alert-primary {
+  --a-c: #084298;
+  --a-bg: #cfe2ff;
+  --a-bc: #b6d4fe;
+}
+
+.alert-secondary {
+  --a-c: #41464b;
+  --a-bg: #e2e3e5;
+  --a-bc: #d3d6d8;
+}
+
+.alert-info {
+  --a-c: #055160;
+  --a-bg: #cff4fc;
+  --a-bc: #b6effb;
+}
+
+.alert-danger {
+  --a-c: var(--c-danger);
+  --a-bg: rgba(var(--c-rgb-danger), 0.2);
+}
+
+.alert-light {
+  --a-c: #636464;
+  --a-bg: #fefefe;
+  --a-bc: #fdfdfe;
+}
+
+.alert-dark {
+  --a-c: #141619;
+  --a-bg: #d3d3d4;
+  --a-bc: #bcbebf;
+}

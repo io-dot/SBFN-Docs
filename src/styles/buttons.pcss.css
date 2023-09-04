@@ -1,0 +1,308 @@
+.btn {
+  --btn-p-x: 29px;
+  --btn-p-y: 17px;
+  --btn-ff: inherit;
+  --btn-fs: var(--body-fs);
+  --btn-fw: var(--fw-semibold);
+  --btn-lh: 1.5;
+  --btn-color: #212529;
+  --btn-bg: transparent;
+  --btn-border-width: 0px;
+  --btn-border-color: transparent;
+  --btn-border-radius: 50px;
+  --btn-hover-border-color: transparent;
+  --btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 1px 1px rgba(0, 0, 0, 0.075);
+  --btn-disabled-opacity: 0.65;
+  --btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--btn-focus-shadow-rgb), 0.5);
+
+  display: inline-block;
+  padding: var(--btn-p-y) var(--btn-p-x);
+  font-size: var(--btn-fs);
+  font-weight: var(--btn-fw);
+  line-height: var(--btn-lh);
+  color: var(--btn-color);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: var(--btn-border-width) solid var(--btn-border-color);
+  border-radius: var(--btn-border-radius);
+  background-color: var(--btn-bg);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:hover {
+    color: var(--btn-hover-color);
+    background-color: var(--btn-hover-bg);
+    border-color: var(--btn-hover-border-color);
+    text-decoration: none;
+    opacity: var(--btn-hover--opacity, 0.8);
+  }
+
+  &:active {
+    box-shadow: var(--btn-active-shadow);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+.btn-check + .btn:hover {
+  color: var(--btn-color);
+  background-color: var(--btn-bg);
+  border-color: var(--btn-border-color);
+}
+.btn:focus-visible {
+  color: var(--btn-hover-color);
+  background-color: var(--btn-hover-bg);
+  border-color: var(--btn-hover-border-color);
+  outline: 0;
+  box-shadow: var(--btn-focus-box-shadow);
+}
+.btn-check:focus-visible + .btn {
+  border-color: var(--btn-hover-border-color);
+  outline: 0;
+  box-shadow: var(--btn-focus-box-shadow);
+}
+.btn-check:checked + .btn,
+:not(.btn-check) + .btn:active,
+.btn:first-child:active,
+.btn.active,
+.btn.show {
+  color: var(--btn-active-color);
+  background-color: var(--btn-active-bg);
+  border-color: var(--btn-active-border-color);
+}
+.btn-check:checked + .btn:focus-visible,
+:not(.btn-check) + .btn:active:focus-visible,
+.btn:first-child:active:focus-visible,
+.btn.active:focus-visible,
+.btn.show:focus-visible {
+  box-shadow: var(--btn-focus-box-shadow);
+}
+.btn:disabled,
+.btn.disabled,
+fieldset:disabled .btn {
+  color: var(--btn-disabled-color);
+  pointer-events: none;
+  background-color: var(--btn-disabled-bg);
+  border-color: var(--btn-disabled-border-color);
+  opacity: var(--btn-disabled-opacity);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-primary {
+  --btn-color: #fff;
+  --btn-bg: var(--c-primary);
+  --btn-border-color: var(--c-primary);
+  --btn-hover-color: var(--c-gray-100);
+  --btn-hover-bg: var(--c-primary);
+  --btn-hover-border-color: var(--c-primary);
+  --btn-active-color: #fff;
+  --btn-active-bg: var(--c-primary-h);
+  --btn-active-border-color: var(--c-primary);
+  --btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --btn-disabled-color: #fff;
+  --btn-disabled-bg: var(--c-primary);
+  --btn-disabled-border-color: var(--c-primary);
+}
+.btn-danger {
+  --btn-color: var(--c-white);
+  --btn-bg: var(--c-danger);
+  --btn-hover-color: var(--c-white);
+  --btn-hover-bg: var(--c-danger);
+  --btn-active-color: var(--c-white);
+  --btn-active-bg: var(--c-danger);
+  --btn-active-border-color: var(--c-danger);
+  --btn-disabled-color: #fff;
+  --btn-disabled-bg: var(--c-primary);
+  --btn-disabled-border-color: var(--c-primary);
+}
+.btn-primary-light {
+  --btn-color: var(--c-primary);
+  --btn-bg: var(--c-green-light);
+  --btn-hover-color: var(--c-primary);
+  --btn-hover-bg: #dfefe7;
+  --btn-active-color: var(--c-white);
+  --btn-active-bg: var(--c-primary-h);
+  --btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.btn-secondary {
+  --btn-color: var(--body-c);
+  --btn-bg: var(--c-gray);
+  --btn-border-color: var(--c-gray);
+  --btn-hover-color: #fff;
+  --btn-hover-bg: #5c636a;
+  --btn-hover-border-color: #565e64;
+  --btn-focus-shadow-rgb: 130, 138, 145;
+  --btn-active-color: #fff;
+  --btn-active-bg: #565e64;
+  --btn-active-border-color: #51585e;
+  --btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --btn-disabled-color: #fff;
+  --btn-disabled-bg: var(--c-gray);
+  --btn-disabled-border-color: var(--c-gray);
+}
+
+.btn-outline-primary {
+  --btn-color: var(--c-primary);
+  --btn-border-color: var(--c-primary);
+  --btn-border-width: 1px;
+  --btn-hover-color: var(--c-white);
+  --btn-hover-bg: var(--c-primary);
+  --btn-hover-border-color: var(--c-primary);
+  --btn-focus-shadow-rgb: 13, 110, 253;
+  --btn-active-color: var(--c-white);
+  --btn-active-bg: var(--c-primary);
+  --btn-active-border-color: var(--c-primary);
+  --btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --btn-disabled-color: var(--c-primary);
+  --btn-disabled-bg: transparent;
+  --btn-disabled-border-color: var(--c-primary);
+  --gradient: none;
+}
+.btn-outline-secondary {
+  --btn-color: var(--c-dark);
+  --btn-border-color: var(--c-gray-200);
+  --btn-border-width: 1px;
+  --btn-hover-color: var(--c-primary);
+  --btn-hover-border-color: var(--btn-color);
+  --btn-focus-shadow-rgb: 108, 117, 125;
+  --btn-active-color: var(--btn-color);
+  --btn-active-border-color: var(--btn-color);
+  --btn-active-shadow: 0 0 5px rgba(0, 0, 0, 0.125);
+  --btn-disabled-color: var(--c-gray-200);
+  --btn-disabled-border-color: var(--c-gray-200);
+  --navbar-nav-link-padding-x: 20px;
+}
+
+.btn-link {
+  --btn-p-x: 0;
+  --btn-p-y: 0;
+  --btn-color: var(--body-color);
+  --btn-bg: transparent;
+  --btn-border-color: transparent;
+  --btn-hover-color: var(--link-hover-color);
+  --btn-hover-border-color: transparent;
+  --btn-active-color: var(--link-hover-color);
+  --btn-active-border-color: transparent;
+  --btn-disabled-color: var(--c-gray);
+  --btn-disabled-border-color: transparent;
+  --btn-box-shadow: none;
+  --btn-focus-shadow-rgb: 49, 132, 253;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+
+  &:focus-visible {
+    color: var(--btn-color);
+  }
+
+  &:hover {
+    color: var(--btn-hover-color);
+  }
+
+  svg {
+    margin-right: 8px;
+  }
+}
+
+.btn-sm {
+  --btn-p-y: 14px;
+
+  line-height: 1;
+  font-size: 14px;
+}
+
+.btn-xs {
+  --btn-p-y: 8px;
+  --btn-p-x: 16px;
+  --btn-fw: var(--fw-normal);
+
+  line-height: 21px;
+  font-size: 14px;
+}
+
+.btn-clear {
+  --btn-p-y: 0 !important;
+  --btn-p-x: 0 !important;
+  --btn-border-width: 0;
+}
+
+.btn-icon {
+  --btn-p-x: 20px;
+  --btn-p-y: 10px;
+  --btn-fw: var(--fw-normal);
+  --btn-hover-border-color: var(--c-primary);
+  /* --btn-hover-color: var(--c-primary); */
+
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-w-icon {
+  --btn-p-x: 30px;
+  --btn-p-y: 17px;
+
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+  gap: 10px;
+}
+
+.btn-only-icon {
+  --btn-p-x: 9px;
+  --btn-p-y: 9px;
+}
+
+.btn-warning {
+  --btn-color: var(--c-warning);
+  --btn-bg: #fdf5e8;
+  --btn-border-color: var(--btn-bg);
+  --btn-hover-color: var(--c-warning);
+  --btn-hover-bg: #fdf5e8;
+  --btn-hover-border-color: var(--btn-hover-bg);
+  --btn-active-color: var(--c-warning);
+  --btn-active-bg: #eedfc7;
+  --btn-active-border-color: var(--btn-active-bg);
+  --btn-active-shadow: inset 0 3px 5px rgba(238, 223, 199, 0.125);
+  --btn-disabled-color: #f3ac39;
+  --btn-disabled-bg: #fdf5e8;
+
+  position: relative;
+
+  .new-comments {
+    position: absolute;
+    right: -15px;
+    top: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 30px;
+    border-radius: var(--br-pill);
+    background-color: var(--btn-color);
+    color: var(--c-white);
+    padding-inline: 6px;
+  }
+}
+
+.btn-warning-reverse {
+  --btn-color: var(--c-white);
+  --btn-bg: var(--c-warning);
+}
