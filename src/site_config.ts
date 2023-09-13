@@ -18,8 +18,6 @@ export const SIDEBAR_ITEMS = {
     "/SBFN-Docs/docs/get-started/installation",
   ],
   "SBFN Components": [
-    `${GIT_REPO}/docs/get-started/introduction`,
-    "/SBFN-Docs/docs/get-started/installation",
   ],
   "Tutorials": [
     "/SBFN-Docs/docs/tutorials/build-x",

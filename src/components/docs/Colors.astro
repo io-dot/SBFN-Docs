@@ -1,0 +1,71 @@
+---
+type Propos = {
+  color: string;
+  cssVar?: string;
+  info?: string;
+};
+
+const { color, cssVar, info } = Astro.props;
+---
+
+<div class="card-color">
+  <div id="w-color" class="w--color" style=`background-color: var(${cssVar});`></div>
+
+  <div class="css-var">
+    {cssVar}
+  </div>
+
+  <div class="color-hex">
+    {color}
+  </div>
+
+  {info &&
+    <div class="color-info">
+      {info}
+    <div>
+  }
+</div>
+
+<script is:inline define:vars={{ cssVar }}>
+  let colorHex = document.getElementsByClassName("color-hex");
+  console.log(getComputedStyle(document.documentElement)
+    .getPropertyValue(cssVar));
+  </script>
+
+<style>
+  .card-color {
+    display: flex;
+    width: 228px;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 17px;
+    border-radius: 24px;
+    border: 1px solid #d9e4f7;
+    background: #fff;
+  }
+
+  .w--color {
+    border-radius: 24px;
+    width: 100%;
+    aspect-ratio: 2/1;
+  }
+
+  .css-var {
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .color-hex {
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+</style>

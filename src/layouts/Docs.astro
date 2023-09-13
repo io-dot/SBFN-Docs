@@ -9,25 +9,16 @@ import "../styles/vars.pcss.css";
 export interface Props {
   /** Title of the page */
   title?: string;
-  /** OpenGraph thumbnail of the page */
-  thumbnail?: {
-    /** URL of the thumbnail */
-    src: string;
-    /** Alt text of the thumbnail */
-    alt: string;
-  };
+  cssFile: string;
   headings: MarkdownHeading[];
-  style?: string;
 }
 
 const docs = await getCollection("docs");
 
-const { title, thumbnail, headings, style } = Astro.props;
-
-import "../styles/buttons.pcss.css";
+const { title, headings, cssFile } = Astro.props;
 ---
 
-<Base title={title} thumbnail={thumbnail}>
+<Base title={title}>
   <main class="grid grid-cols-12 min-h-screen">
     <aside
       id="docs_nav"
@@ -75,6 +66,7 @@ import "../styles/buttons.pcss.css";
           }
         </div>
       </div>
+
       <script>
         const open = document.querySelector("#open");
         open.addEventListener("click", () => {

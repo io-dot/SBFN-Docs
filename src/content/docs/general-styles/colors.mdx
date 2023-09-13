@@ -1,0 +1,45 @@
+---
+title: Colors
+cssFile: ""
+---
+
+All variables are in the file:
+
+```
+[theme-name]/dev/pcss/vars.pcss.css
+```
+
+which are finally compiled in
+
+```
+[theme-name]/css/vars.pcss.css
+```
+
+import Color from "../../../components/docs/Colors.astro";
+
+# Primary Colors
+
+<Color color="#fff" cssVar="--c-white" />
+<Color color="#000" cssVar="--c-black" />
+<Color color="#01a04e" cssVar="--c-primary" />
+<Color color="#006e35" cssVar="--c-primary-h" />
+<Color color="#dfefe7" cssVar="--c-primary-light" />
+<Color color="#f7fbf9" cssVar="--c-green-light" />
+<Color color="#6c757d" cssVar="--c-secondary" />
+<Color color="#198754" cssVar="--c-success" />
+<Color color="#0dcaf0" cssVar="--c-info" />
+
+<Color cssVar="--c-warning" color="#e79411" />
+<Color cssVar="--c-warning-light" color="#fdf5e8" />
+<Color cssVar="--c-danger" color="#d91023" />
+
+# Gray gradient
+
+<Color cssVar="--c-gray-100" color="#f5f5f5" />
+<Color cssVar="--c-gray-300" color="#dddedd" />
+<Color cssVar="--c-gray-400" color="#999999" />
+<Color cssVar="--c-gray-700" color="#47504a" />
+<Color cssVar="--c-gray-900" color="#19241d" />
+
+<Color cssVar="--c-light" color="#f5f5f5" info="is used for line colo" />
+<Color cssVar="--c-dark" color="#19241d" info="Is used for the body text" />
